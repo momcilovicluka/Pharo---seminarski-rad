@@ -1,0 +1,1 @@
+'Hello svete' asMorph openInWindow

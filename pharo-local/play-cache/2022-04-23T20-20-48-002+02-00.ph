@@ -1,0 +1,1 @@
+| c |c := Counter startingAt: 69.c
