@@ -1,111 +1,110 @@
-[31mRPackageConflictError: A package named Announcements-Help already exists
-[0mRPackageOrganizer>>signalPackageExists:
-RPackageOrganizer>>validatePackageDoesNotExist:
-RPackageOrganizer>>createPackageNamed:
-ClySystemEnvironment>>createPackageNamed:
-SycAddNewPackageCommand>>execute
-ClyFullBrowserPackageContext(ClySystemBrowserContext)>>executeCommand:by:
-[self prepareCommandForExecution.
-	context executeCommand: command by: self.
-	self applyCommandResult] in CmdCommandActivator>>executeCommand in Block: [self prepareCommandForExecution....
-FullBlockClosure(BlockClosure)>>on:do:
-CmdCommandActivator>>executeCommand
-[ | selArgCount |  "show cursor in case item opens a new MVC window"
-		(selArgCount := selector numArgs) = 0
-			ifTrue:
-				[target perform: selector]
-			ifFalse:
-				[selArgCount = arguments size
-					ifTrue: [target perform: selector withArguments: arguments]
-					ifFalse: [target perform: selector withArguments: (arguments copyWith: evt)]].
-		self showShortcut.
-		self changed] in ToggleMenuItemMorph(MenuItemMorph)>>invokeWithEvent: in Block: [ | selArgCount |  "show cursor in case item opens...etc...
+[31mTestFailure: Got 'TinyBlog is a small blog engine made with Pharo.' instead of 'TinyBlog is a small blog engine
+	made with Pharo.'.
+[0mTBPostTest(TestAsserter)>>assert:description:resumable:
+TBPostTest(TestAsserter)>>assert:description:
+TBPostTest(TestAsserter)>>assert:equals:
+TBPostTest>>testPostIsCreatedCorrectly
+TBPostTest(TestCase)>>performTest
+[self setUp.
+	self performTest] in TBPostTest(TestCase)>>runCase in Block: [self setUp....
 FullBlockClosure(BlockClosure)>>ensure:
-CursorWithMask(Cursor)>>showWhile:
-ToggleMenuItemMorph(MenuItemMorph)>>invokeWithEvent:
-ToggleMenuItemMorph(MenuItemMorph)>>mouseUp:
-ToggleMenuItemMorph(MenuItemMorph)>>handleMouseUp:
-MouseButtonEvent>>sentTo:
-ToggleMenuItemMorph(Morph)>>handleEvent:
-MorphicEventDispatcher>>dispatchDefault:with:
-MorphicEventDispatcher>>handleMouseUp:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
+TBPostTest(TestCase)>>runCase
+[aTestCase runCase] in [
+		[aTestCase runCase] ensure: [
+			"Terminated test is not considered as completed (user just closed a debugger for example)"
+			mainTestProcess isTerminating ifFalse: [ 
+				self handleCompletedTest ]]
+	] in TestExecutionEnvironment>>runTestCaseUnderWatchdog: in Block: [aTestCase runCase]
 FullBlockClosure(BlockClosure)>>ensure:
-MorphicEventDispatcher>>dispatchEvent:with:
-ToggleMenuItemMorph(Morph)>>processEvent:using:
-MorphicEventDispatcher>>dispatchDefault:with:
-MorphicEventDispatcher>>handleMouseUp:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-MorphicEventDispatcher>>dispatchEvent:with:
-[0m[31mRPackageConflictError: A package named Announcements-Help already exists
-[0mRPackageOrganizer>>signalPackageExists:
-RPackageOrganizer>>validatePackageDoesNotExist:
-RPackageOrganizer>>createPackageNamed:
-ClySystemEnvironment>>createPackageNamed:
-SycAddNewPackageCommand>>execute
-ClyFullBrowserPackageContext(ClySystemBrowserContext)>>executeCommand:by:
-[self prepareCommandForExecution.
-	context executeCommand: command by: self.
-	self applyCommandResult] in CmdCommandActivator>>executeCommand in Block: [self prepareCommandForExecution....
-FullBlockClosure(BlockClosure)>>on:do:
-CmdCommandActivator>>executeCommand
-[ | selArgCount |  "show cursor in case item opens a new MVC window"
-		(selArgCount := selector numArgs) = 0
-			ifTrue:
-				[target perform: selector]
-			ifFalse:
-				[selArgCount = arguments size
-					ifTrue: [target perform: selector withArguments: arguments]
-					ifFalse: [target perform: selector withArguments: (arguments copyWith: evt)]].
-		self showShortcut.
-		self changed] in ToggleMenuItemMorph(MenuItemMorph)>>invokeWithEvent: in Block: [ | selArgCount |  "show cursor in case item opens...etc...
-FullBlockClosure(BlockClosure)>>ensure:
-CursorWithMask(Cursor)>>showWhile:
-ToggleMenuItemMorph(MenuItemMorph)>>invokeWithEvent:
-ToggleMenuItemMorph(MenuItemMorph)>>mouseUp:
-ToggleMenuItemMorph(MenuItemMorph)>>handleMouseUp:
-MouseButtonEvent>>sentTo:
-ToggleMenuItemMorph(Morph)>>handleEvent:
-MorphicEventDispatcher>>dispatchDefault:with:
-MorphicEventDispatcher>>handleMouseUp:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-MorphicEventDispatcher>>dispatchEvent:with:
-ToggleMenuItemMorph(Morph)>>processEvent:using:
-MorphicEventDispatcher>>dispatchDefault:with:
-MorphicEventDispatcher>>handleMouseUp:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-MorphicEventDispatcher>>dispatchEvent:with:
-[0m[31mInstance of SmallInteger did not understand #c
-[0mSmallInteger(Object)>>doesNotUnderstand: #c
-UndefinedObject>>DoIt
-[ receiver withArgs: (context ifNil: [ #() ] ifNotNil: [ {context} ]) executeMethod: self compileDoit] in OpalCompiler>>evaluate in Block: [ receiver withArgs: (context ifNil: [ #() ] ifNot...etc...
-FullBlockClosure(BlockClosure)>>on:do:
-OpalCompiler>>evaluate
 [
-		oldBindings := self interactionModel bindings copy.
-		receiver := self interactionModel doItReceiver.
-		result := receiver class compiler
-			source: aString readStream;
-			context: self interactionModel doItContext;
-			receiver: self interactionModel doItReceiver;
-			requestor: self interactionModel;
-			environment: self environment;
-			failBlock:  [ ^ compileErrorBlock value ];
-			evaluate.
-		oldBindings size = self interactionModel bindings size 
-			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
-		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+		[aTestCase runCase] ensure: [
+			"Terminated test is not considered as completed (user just closed a debugger for example)"
+			mainTestProcess isTerminating ifFalse: [ 
+				self handleCompletedTest ]]
+	] in TestExecutionEnvironment>>runTestCaseUnderWatchdog: in Block: [...
 FullBlockClosure(BlockClosure)>>on:do:
-SpCodePresenter>>evaluate:onCompileError:onError:
-SpCodePrintItCommand(SpCodeSelectionCommand)>>evaluate:andDo:
-SpCodePrintItCommand(SpCodeSelectionCommand)>>evaluateSelectionAndDo:
+TestExecutionEnvironment>>runTestCaseUnderWatchdog:
+[self runTestCaseUnderWatchdog: aTestCase] in TestExecutionEnvironment>>runTestCase: in Block: [self runTestCaseUnderWatchdog: aTestCase]
+FullBlockClosure(BlockClosure)>>ensure:
+TestExecutionEnvironment>>runTestCase:
+[
+		testEnv runTestCase: aTestCase] in DefaultExecutionEnvironment>>runTestCase: in Block: [...
+[ self value: anExecutionEnvironment.
+	anExecutionEnvironment activated.
+	aBlock value  ] in CurrentExecutionEnvironment class>>activate:for: in Block: [ self value: anExecutionEnvironment....
+FullBlockClosure(BlockClosure)>>ensure:
+CurrentExecutionEnvironment class>>activate:for:
+TestExecutionEnvironment(ExecutionEnvironment)>>beActiveDuring:
+DefaultExecutionEnvironment>>runTestCase:
+CurrentExecutionEnvironment class>>runTestCase:
+TBPostTest(TestCase)>>runCaseManaged
+[
+	aTestCase announce: TestCaseStarted withResult: self.
+	aTestCase runCaseManaged.
+	aTestCase announce: TestCaseEnded  withResult: self.
+	"To not affect performance of big test suites following logic is not inside addPass: method"
+	errors remove: aTestCase ifAbsent: [].
+	failures remove: aTestCase ifAbsent: [].
+	self addPass: aTestCase] in TestResult>>runCaseForDebug: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+TestResult>>runCaseForDebug:
+[ result runCaseForDebug: self ] in TBPostTest(TestCase)>>debug in Block: [ result runCaseForDebug: self ]
+FullBlockClosure(BlockClosure)>>ensure:
+TBPostTest(TestCase)>>debug
+[0m[31mTestFailure: Got 'TinyBlog is a small blog engine made with Pharo.' instead of 'TinyBlog is a small blog engine
+	made with Pharo.'.
+[0mTBPostTest(TestAsserter)>>assert:description:resumable:
+TBPostTest(TestAsserter)>>assert:description:
+TBPostTest(TestAsserter)>>assert:equals:
+TBPostTest>>testPostIsCreatedCorrectly
+TBPostTest(TestCase)>>performTest
+[self setUp.
+	self performTest] in TBPostTest(TestCase)>>runCase in Block: [self setUp....
+FullBlockClosure(BlockClosure)>>ensure:
+TBPostTest(TestCase)>>runCase
+[aTestCase runCase] in [
+		[aTestCase runCase] ensure: [
+			"Terminated test is not considered as completed (user just closed a debugger for example)"
+			mainTestProcess isTerminating ifFalse: [ 
+				self handleCompletedTest ]]
+	] in TestExecutionEnvironment>>runTestCaseUnderWatchdog: in Block: [aTestCase runCase]
+FullBlockClosure(BlockClosure)>>ensure:
+[
+		[aTestCase runCase] ensure: [
+			"Terminated test is not considered as completed (user just closed a debugger for example)"
+			mainTestProcess isTerminating ifFalse: [ 
+				self handleCompletedTest ]]
+	] in TestExecutionEnvironment>>runTestCaseUnderWatchdog: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+TestExecutionEnvironment>>runTestCaseUnderWatchdog:
+[self runTestCaseUnderWatchdog: aTestCase] in TestExecutionEnvironment>>runTestCase: in Block: [self runTestCaseUnderWatchdog: aTestCase]
+FullBlockClosure(BlockClosure)>>ensure:
+TestExecutionEnvironment>>runTestCase:
+[
+		testEnv runTestCase: aTestCase] in DefaultExecutionEnvironment>>runTestCase: in Block: [...
+[ self value: anExecutionEnvironment.
+	anExecutionEnvironment activated.
+	aBlock value  ] in CurrentExecutionEnvironment class>>activate:for: in Block: [ self value: anExecutionEnvironment....
+FullBlockClosure(BlockClosure)>>ensure:
+CurrentExecutionEnvironment class>>activate:for:
+TestExecutionEnvironment(ExecutionEnvironment)>>beActiveDuring:
+DefaultExecutionEnvironment>>runTestCase:
+CurrentExecutionEnvironment class>>runTestCase:
+TBPostTest(TestCase)>>runCaseManaged
+[
+	aTestCase announce: TestCaseStarted withResult: self.
+	aTestCase runCaseManaged.
+	aTestCase announce: TestCaseEnded  withResult: self.
+	"To not affect performance of big test suites following logic is not inside addPass: method"
+	errors remove: aTestCase ifAbsent: [].
+	failures remove: aTestCase ifAbsent: [].
+	self addPass: aTestCase] in TestResult>>runCaseForDebug: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+TestResult>>runCaseForDebug:
+[ result runCaseForDebug: self ] in TBPostTest(TestCase)>>debug in Block: [ result runCaseForDebug: self ]
+FullBlockClosure(BlockClosure)>>ensure:
+TBPostTest(TestCase)>>debug
+[0mdePrintItCommand(SpCodeSelectionCommand)>>evaluateSelectionAndDo:
 SpCodePrintItCommand>>execute
 SpCommand(CmCommandDecorator)>>execute
 [ self decoratedCommand execute ] in SpToolCurrentApplicationCommand>>execute in Block: [ self decoratedCommand execute ]

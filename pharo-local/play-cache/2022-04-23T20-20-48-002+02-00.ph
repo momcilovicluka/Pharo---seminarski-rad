@@ -1,1 +1,1 @@
-| c |c := Counter startingAt: 69.c
+TBPost	title: 'naslov'	text: 'tekstic'	category: 'mini blogic'
