@@ -1,1 +1,1 @@
-TBPost	title: 'naslov'	text: 'tekstic'	category: 'mini blogic'
+TBPost	title: 'naslov'	text: 'tekstic'	category: 'mini blogic'	TBBlog createDemoPosts ; current

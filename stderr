@@ -1,99 +1,102 @@
-[31mTestFailure: Got 'TinyBlog is a small blog engine made with Pharo.' instead of 'TinyBlog is a small blog engine
-	made with Pharo.'.
-[0mTBPostTest(TestAsserter)>>assert:description:resumable:
-TBPostTest(TestAsserter)>>assert:description:
-TBPostTest(TestAsserter)>>assert:equals:
-TBPostTest>>testPostIsCreatedCorrectly
-TBPostTest(TestCase)>>performTest
-[self setUp.
-	self performTest] in TBPostTest(TestCase)>>runCase in Block: [self setUp....
-FullBlockClosure(BlockClosure)>>ensure:
-TBPostTest(TestCase)>>runCase
-[aTestCase runCase] in [
-		[aTestCase runCase] ensure: [
-			"Terminated test is not considered as completed (user just closed a debugger for example)"
-			mainTestProcess isTerminating ifFalse: [ 
-				self handleCompletedTest ]]
-	] in TestExecutionEnvironment>>runTestCaseUnderWatchdog: in Block: [aTestCase runCase]
-FullBlockClosure(BlockClosure)>>ensure:
-[
-		[aTestCase runCase] ensure: [
-			"Terminated test is not considered as completed (user just closed a debugger for example)"
-			mainTestProcess isTerminating ifFalse: [ 
-				self handleCompletedTest ]]
-	] in TestExecutionEnvironment>>runTestCaseUnderWatchdog: in Block: [...
+[31mRPackageConflictError: Package/Tag can not be added because it conflicts with package TinyBlog tag Tests
+[0mRPackageOrganizer>>validateCanBeAddedPackageName:tagName:
+[ 
+			(packageName includes: $-) ifFalse: [ ^ self ].
+			 
+			^ self 
+				validateCanBeAddedPackageName: (packageName copyUpToLast: $-)
+				tagName: ((packageName copyAfterLast: $-), (tagName 
+					ifNotNil: [ '-', tagName ]
+					ifNil: [ '' ] )) ] in RPackageOrganizer>>validateCanBeAddedPackageName:tagName: in Block: [ ...
+IdentityDictionary(Dictionary)>>at:ifAbsent:
+RPackageOrganizer>>packageNamed:ifAbsent:
+RPackageOrganizer>>validateCanBeAddedPackageName:tagName:
+RPackageOrganizer>>validateCanBeAddedPackage:
+RPackageOrganizer>>registerPackage:
+RPackageOrganizer>>createPackageNamed:
+ClySystemEnvironment>>createPackageNamed:
+SycAddNewPackageCommand>>execute
+ClyFullBrowserPackageContext(ClySystemBrowserContext)>>executeCommand:by:
+[self prepareCommandForExecution.
+	context executeCommand: command by: self.
+	self applyCommandResult] in CmdCommandActivator>>executeCommand in Block: [self prepareCommandForExecution....
 FullBlockClosure(BlockClosure)>>on:do:
-TestExecutionEnvironment>>runTestCaseUnderWatchdog:
-[self runTestCaseUnderWatchdog: aTestCase] in TestExecutionEnvironment>>runTestCase: in Block: [self runTestCaseUnderWatchdog: aTestCase]
+CmdCommandActivator>>executeCommand
+[ | selArgCount |  "show cursor in case item opens a new MVC window"
+		(selArgCount := selector numArgs) = 0
+			ifTrue:
+				[target perform: selector]
+			ifFalse:
+				[selArgCount = arguments size
+					ifTrue: [target perform: selector withArguments: arguments]
+					ifFalse: [target perform: selector withArguments: (arguments copyWith: evt)]].
+		self showShortcut.
+		self changed] in ToggleMenuItemMorph(MenuItemMorph)>>invokeWithEvent: in Block: [ | selArgCount |  "show cursor in case item opens...etc...
 FullBlockClosure(BlockClosure)>>ensure:
-TestExecutionEnvironment>>runTestCase:
-[
-		testEnv runTestCase: aTestCase] in DefaultExecutionEnvironment>>runTestCase: in Block: [...
-[ self value: anExecutionEnvironment.
-	anExecutionEnvironment activated.
-	aBlock value  ] in CurrentExecutionEnvironment class>>activate:for: in Block: [ self value: anExecutionEnvironment....
+CursorWithMask(Cursor)>>showWhile:
+ToggleMenuItemMorph(MenuItemMorph)>>invokeWithEvent:
+ToggleMenuItemMorph(MenuItemMorph)>>mouseUp:
+ToggleMenuItemMorph(MenuItemMorph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+ToggleMenuItemMorph(Morph)>>handleEvent:
+MorphicEventDispatcher>>dispatchDefault:with:
+MorphicEventDispatcher>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
 FullBlockClosure(BlockClosure)>>ensure:
-CurrentExecutionEnvironment class>>activate:for:
-TestExecutionEnvironment(ExecutionEnvironment)>>beActiveDuring:
-DefaultExecutionEnvironment>>runTestCase:
-CurrentExecutionEnvironment class>>runTestCase:
-TBPostTest(TestCase)>>runCaseManaged
-[
-	aTestCase announce: TestCaseStarted withResult: self.
-	aTestCase runCaseManaged.
-	aTestCase announce: TestCaseEnded  withResult: self.
-	"To not affect performance of big test suites following logic is not inside addPass: method"
-	errors remove: aTestCase ifAbsent: [].
-	failures remove: aTestCase ifAbsent: [].
-	self addPass: aTestCase] in TestResult>>runCaseForDebug: in Block: [...
+MorphicEventDispatcher>>dispatchEvent:with:
+ToggleMenuItemMorph(Morph)>>processEvent:using:
+MorphicEventDispatcher>>dispatchDefault:with:
+[0m[31mRPackageConflictError: Package/Tag can not be added because it conflicts with package TinyBlog tag Tests
+[0mRPackageOrganizer>>validateCanBeAddedPackageName:tagName:
+[ 
+			(packageName includes: $-) ifFalse: [ ^ self ].
+			 
+			^ self 
+				validateCanBeAddedPackageName: (packageName copyUpToLast: $-)
+				tagName: ((packageName copyAfterLast: $-), (tagName 
+					ifNotNil: [ '-', tagName ]
+					ifNil: [ '' ] )) ] in RPackageOrganizer>>validateCanBeAddedPackageName:tagName: in Block: [ ...
+IdentityDictionary(Dictionary)>>at:ifAbsent:
+RPackageOrganizer>>packageNamed:ifAbsent:
+RPackageOrganizer>>validateCanBeAddedPackageName:tagName:
+RPackageOrganizer>>validateCanBeAddedPackage:
+RPackageOrganizer>>registerPackage:
+RPackageOrganizer>>createPackageNamed:
+ClySystemEnvironment>>createPackageNamed:
+SycAddNewPackageCommand>>execute
+ClyFullBrowserPackageContext(ClySystemBrowserContext)>>executeCommand:by:
+[self prepareCommandForExecution.
+	context executeCommand: command by: self.
+	self applyCommandResult] in CmdCommandActivator>>executeCommand in Block: [self prepareCommandForExecution....
 FullBlockClosure(BlockClosure)>>on:do:
-TestResult>>runCaseForDebug:
-[ result runCaseForDebug: self ] in TBPostTest(TestCase)>>debug in Block: [ result runCaseForDebug: self ]
+CmdCommandActivator>>executeCommand
+[ | selArgCount |  "show cursor in case item opens a new MVC window"
+		(selArgCount := selector numArgs) = 0
+			ifTrue:
+				[target perform: selector]
+			ifFalse:
+				[selArgCount = arguments size
+					ifTrue: [target perform: selector withArguments: arguments]
+					ifFalse: [target perform: selector withArguments: (arguments copyWith: evt)]].
+		self showShortcut.
+		self changed] in ToggleMenuItemMorph(MenuItemMorph)>>invokeWithEvent: in Block: [ | selArgCount |  "show cursor in case item opens...etc...
 FullBlockClosure(BlockClosure)>>ensure:
-TBPostTest(TestCase)>>debug
-[0m[31mTestFailure: Got 'TinyBlog is a small blog engine made with Pharo.' instead of 'TinyBlog is a small blog engine
-	made with Pharo.'.
-[0mTBPostTest(TestAsserter)>>assert:description:resumable:
-TBPostTest(TestAsserter)>>assert:description:
-TBPostTest(TestAsserter)>>assert:equals:
-TBPostTest>>testPostIsCreatedCorrectly
-TBPostTest(TestCase)>>performTest
-[self setUp.
-	self performTest] in TBPostTest(TestCase)>>runCase in Block: [self setUp....
+CursorWithMask(Cursor)>>showWhile:
+ToggleMenuItemMorph(MenuItemMorph)>>invokeWithEvent:
+ToggleMenuItemMorph(MenuItemMorph)>>mouseUp:
+ToggleMenuItemMorph(MenuItemMorph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+ToggleMenuItemMorph(Morph)>>handleEvent:
+MorphicEventDispatcher>>dispatchDefault:with:
+MorphicEventDispatcher>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
 FullBlockClosure(BlockClosure)>>ensure:
-TBPostTest(TestCase)>>runCase
-[aTestCase runCase] in [
-		[aTestCase runCase] ensure: [
-			"Terminated test is not considered as completed (user just closed a debugger for example)"
-			mainTestProcess isTerminating ifFalse: [ 
-				self handleCompletedTest ]]
-	] in TestExecutionEnvironment>>runTestCaseUnderWatchdog: in Block: [aTestCase runCase]
-FullBlockClosure(BlockClosure)>>ensure:
-[
-		[aTestCase runCase] ensure: [
-			"Terminated test is not considered as completed (user just closed a debugger for example)"
-			mainTestProcess isTerminating ifFalse: [ 
-				self handleCompletedTest ]]
-	] in TestExecutionEnvironment>>runTestCaseUnderWatchdog: in Block: [...
-FullBlockClosure(BlockClosure)>>on:do:
-TestExecutionEnvironment>>runTestCaseUnderWatchdog:
-[self runTestCaseUnderWatchdog: aTestCase] in TestExecutionEnvironment>>runTestCase: in Block: [self runTestCaseUnderWatchdog: aTestCase]
-FullBlockClosure(BlockClosure)>>ensure:
-TestExecutionEnvironment>>runTestCase:
-[
-		testEnv runTestCase: aTestCase] in DefaultExecutionEnvironment>>runTestCase: in Block: [...
-[ self value: anExecutionEnvironment.
-	anExecutionEnvironment activated.
-	aBlock value  ] in CurrentExecutionEnvironment class>>activate:for: in Block: [ self value: anExecutionEnvironment....
-FullBlockClosure(BlockClosure)>>ensure:
-CurrentExecutionEnvironment class>>activate:for:
-TestExecutionEnvironment(ExecutionEnvironment)>>beActiveDuring:
-DefaultExecutionEnvironment>>runTestCase:
-CurrentExecutionEnvironment class>>runTestCase:
-TBPostTest(TestCase)>>runCaseManaged
-[
-	aTestCase announce: TestCaseStarted withResult: self.
-	aTestCase runCaseManaged.
+MorphicEventDispatcher>>dispatchEvent:with:
+ToggleMenuItemMorph(Morph)>>processEvent:using:
+MorphicEventDispatcher>>dispatchDefault:with:
+[0mseManaged.
 	aTestCase announce: TestCaseEnded  withResult: self.
 	"To not affect performance of big test suites following logic is not inside addPass: method"
 	errors remove: aTestCase ifAbsent: [].
